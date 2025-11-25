@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title} ?: '複式簿記会計システム'">複式簿記会計システム</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>複式簿記会計システム</h1>
+        </div>
+        <nav>
+            <div class="container">
+                <ul>
+                    <li><a th:href="@{/}" th:classappend="${#httpServletRequest.requestURI == '/' ? 'active' : ''}">ホーム</a></li>
+                    <li><a th:href="@{/journal/new}" th:classappend="${#strings.contains(#httpServletRequest.requestURI, '/journal') ? 'active' : ''}">仕訳入力</a></li>
+                    <li><a th:href="@{/journal}" th:classappend="${#strings.contains(#httpServletRequest.requestURI, '/journal') ? 'active' : ''}">仕訳帳</a></li>
+                    <li><a th:href="@{/ledger}" th:classappend="${#strings.contains(#httpServletRequest.requestURI, '/ledger') ? 'active' : ''}">元帳</a></li>
+                    <li><a th:href="@{/statements}" th:classappend="${#strings.contains(#httpServletRequest.requestURI, '/statements') ? 'active' : ''}">財務諸表</a></li>
+                    <li><a th:href="@{/accounts}" th:classappend="${#strings.contains(#httpServletRequest.requestURI, '/accounts') ? 'active' : ''}">勘定科目</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div th:if="${message}" th:classappend="'alert alert-' + ${messageType ?: 'success'}" th:text="${message}"></div>
+        <div th:if="${error}" class="alert alert-error" th:text="${error}"></div>
+        
+        <div th:replace="${content}"></div>
+    </main>
+
+    <footer style="text-align: center; padding: 2rem; color: #7f8c8d; margin-top: 3rem;">
+        <p>&copy; 2024 複式簿記会計システム</p>
+    </footer>
+
+    <script th:src="@{/js/main.js}"></script>
+</body>
+</html>
+

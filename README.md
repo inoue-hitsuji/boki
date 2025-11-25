@@ -7,7 +7,7 @@
 - **バックエンド**: Java 17 + Spring Boot 3.2.0
 - **データベース**: PostgreSQL
 - **マイグレーション**: Flyway
-- **フロントエンド**: React + TypeScript (予定)
+- **フロントエンド**: HTML + Thymeleaf + JavaScript
 
 ## Day 1: セットアップ手順
 

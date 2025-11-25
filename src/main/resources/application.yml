@@ -24,8 +24,14 @@ spring:
 
 server:
   port: 8080
-  servlet:
-    context-path: /api
+
+spring:
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    encoding: UTF-8
+    mode: HTML
+    cache: false  # 開発中はキャッシュ無効化
 
 logging:
   level:

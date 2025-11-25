@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout :: layout(title='ホーム', content=~{::content})}">
+<body>
+    <div th:fragment="content">
+        <div class="card">
+            <h2>ダッシュボード</h2>
+            <p>複式簿記会計システムへようこそ。</p>
+            <p>このシステムは簿記3級レベルの知識を持つユーザー向けに設計されています。</p>
+            
+            <h3 style="margin-top: 2rem;">主な機能</h3>
+            <ul style="margin-left: 2rem; margin-top: 1rem;">
+                <li><strong>仕訳入力</strong>: 取引を仕訳として記録</li>
+                <li><strong>仕訳帳</strong>: 入力した仕訳の一覧を確認</li>
+                <li><strong>元帳</strong>: 勘定科目ごとの残高推移を確認</li>
+                <li><strong>財務諸表</strong>: 損益計算書・貸借対照表を表示</li>
+                <li><strong>勘定科目管理</strong>: 勘定科目の追加・編集</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+
