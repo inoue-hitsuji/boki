@@ -59,3 +59,4 @@ function formatDate(dateString) {
     return date.toLocaleDateString('ja-JP');
 }
 
+
